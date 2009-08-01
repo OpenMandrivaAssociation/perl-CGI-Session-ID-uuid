@@ -1,16 +1,18 @@
-%define real_name CGI-Session-ID-uuid
+%define upstream_name    CGI-Session-ID-uuid
+%define upstream_version 0.03
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	UUID based CGI Session Identifiers
-Name:		perl-%{real_name}
-Version:	0.03
-Release:	%mkrel 3
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{real_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/R/RS/RSE/%{real_name}-%{version}.tar.bz2
-BuildRequires:	perl-devel
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/R/RS/RSE/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 CGI::Session::ID::uuid is a CGI::Session 4.00 driver to generate identifiers
@@ -20,8 +22,7 @@ it either requires the preferred OSSP::uuid module or alternatively the
 Data::UUID, APR::UUID, DCE::UUID or UUID modules to be installed.
 
 %prep
-
-%setup -q -n %{real_name}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
