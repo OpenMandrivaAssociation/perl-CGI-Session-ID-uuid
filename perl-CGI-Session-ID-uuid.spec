@@ -1,15 +1,13 @@
 %define upstream_name    CGI-Session-ID-uuid
-%define upstream_version 0.03
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	0.03
+Release:	6
 
 Summary:	UUID based CGI Session Identifiers
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/R/RS/RSE/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/R/RS/RSE/%{upstream_name}-%{version}.tar.bz2
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -23,7 +21,7 @@ it either requires the preferred OSSP::uuid module or alternatively the
 Data::UUID, APR::UUID, DCE::UUID or UUID modules to be installed.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -45,9 +43,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 * Sat Aug 01 2009 Jérôme Quelin <jquelin@mandriva.org> 0.30.0-1mdv2011.0
 + Revision: 405782
-- rebuild using %%perl_convert_version
-
-* Wed Jul 30 2008 Thierry Vignaud <tv@mandriva.org> 0.03-3mdv2009.0
+- rebuild using %0.03 Wed Jul 30 2008 Thierry Vignaud <tv@mandriva.org> 0.03-3mdv2009.0
 + Revision: 255828
 - rebuild
 
