@@ -1,13 +1,14 @@
 %define upstream_name    CGI-Session-ID-uuid
+%define upstream_version 0.03
 Name:		perl-%{upstream_name}
 Version:	0.03
-Release:	6
+Release:	1
 
 Summary:	UUID based CGI Session Identifiers
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/%{upstream_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/R/RS/RSE/%{upstream_name}-%{version}.tar.bz2
+Source0:	https://cpan.metacpan.org/authors/id/R/RS/RSE/CGI-Session-ID-uuid-0.03.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
